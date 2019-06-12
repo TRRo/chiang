@@ -95,42 +95,42 @@ public:
         A00_pushButton = new QPushButton(horizontalLayoutWidget);
         A00_pushButton->setObjectName(QString::fromUtf8("A00_pushButton"));
         A00_pushButton->setIconSize(QSize(100, 100));
-        A00_pushButton->setFlat(true);
+        A00_pushButton->setFlat(false);
 
         V0_verticalLayout->addWidget(A00_pushButton);
 
         A10_pushButton = new QPushButton(horizontalLayoutWidget);
         A10_pushButton->setObjectName(QString::fromUtf8("A10_pushButton"));
         A10_pushButton->setIconSize(QSize(100, 100));
-        A10_pushButton->setFlat(true);
+        A10_pushButton->setFlat(false);
 
         V0_verticalLayout->addWidget(A10_pushButton);
 
         A20_pushButton = new QPushButton(horizontalLayoutWidget);
         A20_pushButton->setObjectName(QString::fromUtf8("A20_pushButton"));
         A20_pushButton->setIconSize(QSize(100, 100));
-        A20_pushButton->setFlat(true);
+        A20_pushButton->setFlat(false);
 
         V0_verticalLayout->addWidget(A20_pushButton);
 
         A30_pushButton = new QPushButton(horizontalLayoutWidget);
         A30_pushButton->setObjectName(QString::fromUtf8("A30_pushButton"));
         A30_pushButton->setIconSize(QSize(100, 100));
-        A30_pushButton->setFlat(true);
+        A30_pushButton->setFlat(false);
 
         V0_verticalLayout->addWidget(A30_pushButton);
 
         A40_pushButton = new QPushButton(horizontalLayoutWidget);
         A40_pushButton->setObjectName(QString::fromUtf8("A40_pushButton"));
         A40_pushButton->setIconSize(QSize(100, 100));
-        A40_pushButton->setFlat(true);
+        A40_pushButton->setFlat(false);
 
         V0_verticalLayout->addWidget(A40_pushButton);
 
         A50_pushButton = new QPushButton(horizontalLayoutWidget);
         A50_pushButton->setObjectName(QString::fromUtf8("A50_pushButton"));
         A50_pushButton->setIconSize(QSize(100, 100));
-        A50_pushButton->setFlat(true);
+        A50_pushButton->setFlat(false);
 
         V0_verticalLayout->addWidget(A50_pushButton);
 
@@ -143,42 +143,42 @@ public:
         A01_pushButton = new QPushButton(horizontalLayoutWidget);
         A01_pushButton->setObjectName(QString::fromUtf8("A01_pushButton"));
         A01_pushButton->setIconSize(QSize(100, 100));
-        A01_pushButton->setFlat(true);
+        A01_pushButton->setFlat(false);
 
         V1_verticalLayout->addWidget(A01_pushButton);
 
         A11_pushButton = new QPushButton(horizontalLayoutWidget);
         A11_pushButton->setObjectName(QString::fromUtf8("A11_pushButton"));
         A11_pushButton->setIconSize(QSize(100, 100));
-        A11_pushButton->setFlat(true);
+        A11_pushButton->setFlat(false);
 
         V1_verticalLayout->addWidget(A11_pushButton);
 
         A21_pushButton = new QPushButton(horizontalLayoutWidget);
         A21_pushButton->setObjectName(QString::fromUtf8("A21_pushButton"));
         A21_pushButton->setIconSize(QSize(100, 100));
-        A21_pushButton->setFlat(true);
+        A21_pushButton->setFlat(false);
 
         V1_verticalLayout->addWidget(A21_pushButton);
 
         A31_pushButton = new QPushButton(horizontalLayoutWidget);
         A31_pushButton->setObjectName(QString::fromUtf8("A31_pushButton"));
         A31_pushButton->setIconSize(QSize(100, 100));
-        A31_pushButton->setFlat(true);
+        A31_pushButton->setFlat(false);
 
         V1_verticalLayout->addWidget(A31_pushButton);
 
         A41_pushButton = new QPushButton(horizontalLayoutWidget);
         A41_pushButton->setObjectName(QString::fromUtf8("A41_pushButton"));
         A41_pushButton->setIconSize(QSize(100, 100));
-        A41_pushButton->setFlat(true);
+        A41_pushButton->setFlat(false);
 
         V1_verticalLayout->addWidget(A41_pushButton);
 
         A51_pushButton = new QPushButton(horizontalLayoutWidget);
         A51_pushButton->setObjectName(QString::fromUtf8("A51_pushButton"));
         A51_pushButton->setIconSize(QSize(100, 100));
-        A51_pushButton->setFlat(true);
+        A51_pushButton->setFlat(false);
 
         V1_verticalLayout->addWidget(A51_pushButton);
 
@@ -191,42 +191,42 @@ public:
         A02_pushButton = new QPushButton(horizontalLayoutWidget);
         A02_pushButton->setObjectName(QString::fromUtf8("A02_pushButton"));
         A02_pushButton->setIconSize(QSize(100, 100));
-        A02_pushButton->setFlat(true);
+        A02_pushButton->setFlat(false);
 
         V2_verticalLayout->addWidget(A02_pushButton);
 
         A12_pushButton = new QPushButton(horizontalLayoutWidget);
         A12_pushButton->setObjectName(QString::fromUtf8("A12_pushButton"));
         A12_pushButton->setIconSize(QSize(100, 100));
-        A12_pushButton->setFlat(true);
+        A12_pushButton->setFlat(false);
 
         V2_verticalLayout->addWidget(A12_pushButton);
 
         A22_pushButton = new QPushButton(horizontalLayoutWidget);
         A22_pushButton->setObjectName(QString::fromUtf8("A22_pushButton"));
         A22_pushButton->setIconSize(QSize(100, 100));
-        A22_pushButton->setFlat(true);
+        A22_pushButton->setFlat(false);
 
         V2_verticalLayout->addWidget(A22_pushButton);
 
         A32_pushButton = new QPushButton(horizontalLayoutWidget);
         A32_pushButton->setObjectName(QString::fromUtf8("A32_pushButton"));
         A32_pushButton->setIconSize(QSize(100, 100));
-        A32_pushButton->setFlat(true);
+        A32_pushButton->setFlat(false);
 
         V2_verticalLayout->addWidget(A32_pushButton);
 
         A42_pushButton = new QPushButton(horizontalLayoutWidget);
         A42_pushButton->setObjectName(QString::fromUtf8("A42_pushButton"));
         A42_pushButton->setIconSize(QSize(100, 100));
-        A42_pushButton->setFlat(true);
+        A42_pushButton->setFlat(false);
 
         V2_verticalLayout->addWidget(A42_pushButton);
 
         A52_pushButton = new QPushButton(horizontalLayoutWidget);
         A52_pushButton->setObjectName(QString::fromUtf8("A52_pushButton"));
         A52_pushButton->setIconSize(QSize(100, 100));
-        A52_pushButton->setFlat(true);
+        A52_pushButton->setFlat(false);
 
         V2_verticalLayout->addWidget(A52_pushButton);
 
@@ -239,42 +239,42 @@ public:
         A03_pushButton = new QPushButton(horizontalLayoutWidget);
         A03_pushButton->setObjectName(QString::fromUtf8("A03_pushButton"));
         A03_pushButton->setIconSize(QSize(100, 100));
-        A03_pushButton->setFlat(true);
+        A03_pushButton->setFlat(false);
 
         V3_verticalLayout->addWidget(A03_pushButton);
 
         A13_pushButton = new QPushButton(horizontalLayoutWidget);
         A13_pushButton->setObjectName(QString::fromUtf8("A13_pushButton"));
         A13_pushButton->setIconSize(QSize(100, 100));
-        A13_pushButton->setFlat(true);
+        A13_pushButton->setFlat(false);
 
         V3_verticalLayout->addWidget(A13_pushButton);
 
         A23_pushButton = new QPushButton(horizontalLayoutWidget);
         A23_pushButton->setObjectName(QString::fromUtf8("A23_pushButton"));
         A23_pushButton->setIconSize(QSize(100, 100));
-        A23_pushButton->setFlat(true);
+        A23_pushButton->setFlat(false);
 
         V3_verticalLayout->addWidget(A23_pushButton);
 
         A33_pushButton = new QPushButton(horizontalLayoutWidget);
         A33_pushButton->setObjectName(QString::fromUtf8("A33_pushButton"));
         A33_pushButton->setIconSize(QSize(100, 100));
-        A33_pushButton->setFlat(true);
+        A33_pushButton->setFlat(false);
 
         V3_verticalLayout->addWidget(A33_pushButton);
 
         A43_pushButton = new QPushButton(horizontalLayoutWidget);
         A43_pushButton->setObjectName(QString::fromUtf8("A43_pushButton"));
         A43_pushButton->setIconSize(QSize(100, 100));
-        A43_pushButton->setFlat(true);
+        A43_pushButton->setFlat(false);
 
         V3_verticalLayout->addWidget(A43_pushButton);
 
         A53_pushButton = new QPushButton(horizontalLayoutWidget);
         A53_pushButton->setObjectName(QString::fromUtf8("A53_pushButton"));
         A53_pushButton->setIconSize(QSize(100, 100));
-        A53_pushButton->setFlat(true);
+        A53_pushButton->setFlat(false);
 
         V3_verticalLayout->addWidget(A53_pushButton);
 
@@ -287,42 +287,42 @@ public:
         A04_pushButton = new QPushButton(horizontalLayoutWidget);
         A04_pushButton->setObjectName(QString::fromUtf8("A04_pushButton"));
         A04_pushButton->setIconSize(QSize(100, 100));
-        A04_pushButton->setFlat(true);
+        A04_pushButton->setFlat(false);
 
         V4_verticalLayout->addWidget(A04_pushButton);
 
         A14_pushButton = new QPushButton(horizontalLayoutWidget);
         A14_pushButton->setObjectName(QString::fromUtf8("A14_pushButton"));
         A14_pushButton->setIconSize(QSize(100, 100));
-        A14_pushButton->setFlat(true);
+        A14_pushButton->setFlat(false);
 
         V4_verticalLayout->addWidget(A14_pushButton);
 
         A24_pushButton = new QPushButton(horizontalLayoutWidget);
         A24_pushButton->setObjectName(QString::fromUtf8("A24_pushButton"));
         A24_pushButton->setIconSize(QSize(100, 100));
-        A24_pushButton->setFlat(true);
+        A24_pushButton->setFlat(false);
 
         V4_verticalLayout->addWidget(A24_pushButton);
 
         A34_pushButton = new QPushButton(horizontalLayoutWidget);
         A34_pushButton->setObjectName(QString::fromUtf8("A34_pushButton"));
         A34_pushButton->setIconSize(QSize(100, 100));
-        A34_pushButton->setFlat(true);
+        A34_pushButton->setFlat(false);
 
         V4_verticalLayout->addWidget(A34_pushButton);
 
         A44_pushButton = new QPushButton(horizontalLayoutWidget);
         A44_pushButton->setObjectName(QString::fromUtf8("A44_pushButton"));
         A44_pushButton->setIconSize(QSize(100, 100));
-        A44_pushButton->setFlat(true);
+        A44_pushButton->setFlat(false);
 
         V4_verticalLayout->addWidget(A44_pushButton);
 
         A54_pushButton = new QPushButton(horizontalLayoutWidget);
         A54_pushButton->setObjectName(QString::fromUtf8("A54_pushButton"));
         A54_pushButton->setIconSize(QSize(100, 100));
-        A54_pushButton->setFlat(true);
+        A54_pushButton->setFlat(false);
 
         V4_verticalLayout->addWidget(A54_pushButton);
 
@@ -335,42 +335,42 @@ public:
         A05_pushButton = new QPushButton(horizontalLayoutWidget);
         A05_pushButton->setObjectName(QString::fromUtf8("A05_pushButton"));
         A05_pushButton->setIconSize(QSize(100, 100));
-        A05_pushButton->setFlat(true);
+        A05_pushButton->setFlat(false);
 
         V5_verticalLayout->addWidget(A05_pushButton);
 
         A15_pushButton = new QPushButton(horizontalLayoutWidget);
         A15_pushButton->setObjectName(QString::fromUtf8("A15_pushButton"));
         A15_pushButton->setIconSize(QSize(100, 100));
-        A15_pushButton->setFlat(true);
+        A15_pushButton->setFlat(false);
 
         V5_verticalLayout->addWidget(A15_pushButton);
 
         A25_pushButton = new QPushButton(horizontalLayoutWidget);
         A25_pushButton->setObjectName(QString::fromUtf8("A25_pushButton"));
         A25_pushButton->setIconSize(QSize(100, 100));
-        A25_pushButton->setFlat(true);
+        A25_pushButton->setFlat(false);
 
         V5_verticalLayout->addWidget(A25_pushButton);
 
         A35_pushButton = new QPushButton(horizontalLayoutWidget);
         A35_pushButton->setObjectName(QString::fromUtf8("A35_pushButton"));
         A35_pushButton->setIconSize(QSize(100, 100));
-        A35_pushButton->setFlat(true);
+        A35_pushButton->setFlat(false);
 
         V5_verticalLayout->addWidget(A35_pushButton);
 
         A45_pushButton = new QPushButton(horizontalLayoutWidget);
         A45_pushButton->setObjectName(QString::fromUtf8("A45_pushButton"));
         A45_pushButton->setIconSize(QSize(100, 100));
-        A45_pushButton->setFlat(true);
+        A45_pushButton->setFlat(false);
 
         V5_verticalLayout->addWidget(A45_pushButton);
 
         A55_pushButton = new QPushButton(horizontalLayoutWidget);
         A55_pushButton->setObjectName(QString::fromUtf8("A55_pushButton"));
         A55_pushButton->setIconSize(QSize(100, 100));
-        A55_pushButton->setFlat(true);
+        A55_pushButton->setFlat(false);
 
         V5_verticalLayout->addWidget(A55_pushButton);
 

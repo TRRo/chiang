@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
                 flag=w.eliminate_candy();
                 w.move_candy();
             }
-            if(w.check_candy()){
+            if(!w.check_candy()){
                 w.recreate_table();
             }
         }

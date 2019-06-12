@@ -104,6 +104,8 @@ Table::Table(QWidget *parent) :
     chain_num = 0;
     peel_num = 0;
 
+    cc=0;
+    a=b=c=d=-1;
     qsrand(time(NULL));
 }
 
@@ -576,25 +578,39 @@ void Table::print()
 
 }
 
-int cc=0, a, b,c,d;
+
 void Table::on_A00_pushButton_clicked()
 {
-    cc++;cout<<cc<<endl;
-    if(cc%2==0){
-        c=0;
-        d=0;cout<<"ok"<<endl;
-        test();
-      }
-    else {
+    cc++;
+    if(cc%2)
+    {
         a=0;
         b=0;
+    }
+    else
+    {
+        c=0;
+        d=0;
+        test();
     }
 
 }
 
 void Table::on_A10_pushButton_clicked()
 {
-    cc++;cout<<cc<<endl;
+    cc++;
+    if(cc%2)
+    {
+        a=1;
+        b=0;
+    }
+    else
+    {
+        c=1;
+        d=0;
+        test();
+    }
+    /*cc++;cout<<cc<<endl;
     if(cc%2==0){
         c=1;
         d=0;cout<<"ok"<<endl;
@@ -603,40 +619,624 @@ void Table::on_A10_pushButton_clicked()
     else{
         a=1;
         b=0;
+    }*/
+}
+
+
+
+void Table::on_A20_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=2;
+        b=0;
     }
+    else
+    {
+        c=2;
+        d=0;
+        test();
+    }
+}
+
+void Table::on_A30_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=3;
+        b=0;
+    }
+    else
+    {
+        c=3;
+        d=0;
+        test();
+    }
+}
+
+void Table::on_A40_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=4;
+        b=0;
+    }
+    else
+    {
+        c=4;
+        d=0;
+        test();
+    }
+}
+
+void Table::on_A50_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=5;
+        b=0;
+    }
+    else
+    {
+        c=5;
+        d=0;
+        test();
+    }
+
+}
+
+void Table::on_A01_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=0;
+        b=1;
+    }
+    else
+    {
+        c=0;
+        d=1;
+        test();
+    }
+
+}
+
+void Table::on_A11_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=1;
+        b=1;
+    }
+    else
+    {
+        c=1;
+        d=1;
+        test();
+    }
+}
+
+void Table::on_A21_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=2;
+        b=1;
+    }
+    else
+    {
+        c=2;
+        d=1;
+        test();
+    }
+
+}
+
+void Table::on_A31_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=3;
+        b=1;
+    }
+    else
+    {
+        c=3;
+        d=1;
+        test();
+    }
+}
+
+void Table::on_A41_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=4;
+        b=1;
+    }
+    else
+    {
+        c=4;
+        d=1;
+        test();
+    }
+}
+
+void Table::on_A51_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=5;
+        b=1;
+    }
+    else
+    {
+        c=5;
+        d=1;
+        test();
+    }
+}
+
+void Table::on_A02_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=0;
+        b=2;
+    }
+    else
+    {
+        c=0;
+        d=2;
+        test();
+    }
+
+}
+
+void Table::on_A12_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=1;
+        b=2;
+    }
+    else
+    {
+        c=1;
+        d=2;
+        test();
+    }
+
+}
+
+void Table::on_A22_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=2;
+        b=2;
+    }
+    else
+    {
+        c=2;
+        d=2;
+        test();
+    }
+}
+
+void Table::on_A32_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=3;
+        b=2;
+    }
+    else
+    {
+        c=3;
+        d=2;
+        test();
+    }
+
+}
+
+void Table::on_A42_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=4;
+        b=2;
+    }
+    else
+    {
+        c=4;
+        d=2;
+        test();
+    }
+}
+
+void Table::on_A52_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=5;
+        b=2;
+    }
+    else
+    {
+        c=5;
+        d=2;
+        test();
+    }
+}
+
+void Table::on_A03_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=0;
+        b=3;
+    }
+    else
+    {
+        c=0;
+        d=3;
+        test();
+    }
+
+}
+
+void Table::on_A13_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=1;
+        b=3;
+    }
+    else
+    {
+        c=1;
+        d=3;
+        test();
+    }
+}
+
+void Table::on_A23_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=2;
+        b=3;
+    }
+    else
+    {
+        c=2;
+        d=3;
+        test();
+    }
+}
+
+void Table::on_A33_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=3;
+        b=3;
+    }
+    else
+    {
+        c=3;
+        d=3;
+        test();
+    }
+}
+
+void Table::on_A43_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=4;
+        b=3;
+    }
+    else
+    {
+        c=4;
+        d=3;
+        test();
+    }
+}
+
+void Table::on_A53_pushButton_clicked()
+{
+
+    cc++;
+    if(cc%2)
+    {
+        a=5;
+        b=3;
+    }
+    else
+    {
+        c=5;
+        d=3;
+        test();
+    }
+}
+
+void Table::on_A04_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=0;
+        b=4;
+    }
+    else
+    {
+        c=0;
+        d=4;
+        test();
+    }
+
+}
+
+void Table::on_A14_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=1;
+        b=4;
+    }
+    else
+    {
+        c=1;
+        d=4;
+        test();
+    }
+}
+
+void Table::on_A24_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=2;
+        b=4;
+    }
+    else
+    {
+        c=2;
+        d=4;
+        test();
+    }
+}
+
+void Table::on_A34_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=3;
+        b=4;
+    }
+    else
+    {
+        c=3;
+        d=4;
+        test();
+    }
+}
+
+void Table::on_A44_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=4;
+        b=4;
+    }
+    else
+    {
+        c=4;
+        d=4;
+        test();
+    }
+}
+
+void Table::on_A54_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=5;
+        b=4;
+    }
+    else
+    {
+        c=5;
+        d=4;
+        test();
+    }
+
+}
+
+void Table::on_A05_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=0;
+        b=5;
+    }
+    else
+    {
+        c=0;
+        d=5;
+        test();
+    }
+}
+
+void Table::on_A15_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=1;
+        b=5;
+    }
+    else
+    {
+        c=1;
+        d=5;
+        test();
+    }
+}
+
+void Table::on_A25_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=2;
+        b=5;
+    }
+    else
+    {
+        c=2;
+        d=5;
+        test();
+    }
+
+}
+
+void Table::on_A35_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=3;
+        b=5;
+    }
+    else
+    {
+        c=3;
+        d=5;
+        test();
+    }
+}
+
+void Table::on_A45_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=4;
+        b=5;
+    }
+    else
+    {
+        c=4;
+        d=5;
+        test();
+    }
+
+}
+
+void Table::on_A55_pushButton_clicked()
+{
+    cc++;
+    if(cc%2)
+    {
+        a=5;
+        b=5;
+    }
+    else
+    {
+        c=5;
+        d=5;
+        test();
+    }
+
 }
 
 void Table::test(){
     //if(candy[a[0][0]][a[i][1]].candy_type==5){
 
-   //} set_icon(candy[0][0].color, candy[0][0].candy_type, ui->A00_pushButton);
-    if(a==0&& b==0){
-        if(c==1&&d==0){
+    //} set_icon(candy[0][0].color, candy[0][0].candy_type, ui->A00_pushButton);
+
+    int tx=0, ty=0;
+    ty=d-b;
+    if(ty<0)
+        ty=-ty;
+    tx=c-a;
+    if(tx<0)
+        tx=-tx;
+
+    if(candy[a][b].color!=candy[c][d].color||candy[a][b].candy_type!=candy[c][d].candy_type)
+    {
+        if(tx<2 && ty<2&& tx!=ty)
+        {
             int temp;
-            temp=candy[0][0].color;
-            candy[0][0].color=candy[1][0].color;
-            candy[1][0].color=temp;
-            temp=candy[0][0].candy_type;
-            candy[0][0].candy_type=candy[1][0].candy_type;
-            candy[1][0].candy_type=temp;
-             set_icon(candy[1][0].color, candy[1][0].candy_type, ui->A10_pushButton);
-             set_icon(candy[0][0].color, candy[0][0].candy_type, ui->A00_pushButton);
+
+            temp=candy[a][b].color;
+            candy[a][b].color=candy[c][d].color;
+            candy[c][d].color=temp;
+            temp=candy[a][b].candy_type;
+            candy[a][b].candy_type=candy[c][d].candy_type;
+            candy[c][d].candy_type=temp;
+
+
+            if(eliminate_candy())
+            {
+                bool flag=1;
+                do{
+                    move_candy();
+                    if(flag){
+                        while(flag){
+                            flag=eliminate_candy();
+                            move_candy();
+                        }
+                        if(!check_candy()){
+                            recreate_table();
+                        }
+                    }
+                }
+                while(eliminate_candy());
+            }
+            else
+            {
+                temp=candy[a][b].color;
+                candy[a][b].color=candy[c][d].color;
+                candy[c][d].color=temp;
+                temp=candy[a][b].candy_type;
+                candy[a][b].candy_type=candy[c][d].candy_type;
+                candy[c][d].candy_type=temp;
+            }
+            print();
         }
     }
-    if(a==1&& b==0){
-        if(c==0&&d==0){
-            int temp;
-            temp=candy[0][0].color;
-            candy[0][0].color=candy[1][0].color;
-            candy[1][0].color=temp;
-            temp=candy[0][0].candy_type;
-            candy[0][0].candy_type=candy[1][0].candy_type;
-            candy[1][0].candy_type=temp;
-             set_icon(candy[1][0].color, candy[1][0].candy_type, ui->A10_pushButton);
-             set_icon(candy[0][0].color, candy[0][0].candy_type, ui->A00_pushButton);
-        }
-    }
-    cc=0;
 }
 
 //原地好可愛
