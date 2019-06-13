@@ -32,6 +32,8 @@ class Table : public QMainWindow
 
     bool eliminate_candy();    //eliminate candy; create high_level candy or use high_level candy function; decrease the number of barrier;
 
+    void eliminate_high(int le, int w, int type);
+
     bool check_candy();    //if return true, recreate table; else, continue;
 
     //the way of using functions : click two candy, execute swap(), bool flag=eliminate(), if(flag){while(flag){move(), flag=eliminate()}, if(check()){reset table}}, else{swap()};

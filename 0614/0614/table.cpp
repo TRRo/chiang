@@ -42,50 +42,50 @@ void set_icon(int co, int ty, QPushButton *p)
         switch (co)
         {
             case 1:
-                //p->setIcon(QIcon("D:/060819/0611/0611/img/red.png"));
+                p->setIcon(QIcon("D:/060819/0611/0611/img/red_striped.png"));
                 break;
             case 2:
-                //p->setIcon(QIcon("D:/060819/0611/0611/img/orange.png"));
+                p->setIcon(QIcon("D:/060819/0611/0611/img/orange_striped.png"));
                 break;
             case 3:
-                //p->setIcon(QIcon("D:/060819/0611/0611/img/yellow.png"));
+                p->setIcon(QIcon("D:/060819/0611/0611/img/yellow_striped.png"));
                 break;
             case 4:
-                //p->setIcon(QIcon("D:/060819/0611/0611/img/green.png"));
+                p->setIcon(QIcon("D:/060819/0611/0611/img/green_striped.png"));
                 break;
             case 5:
-                //p->setIcon(QIcon("D:/060819/0611/0611/img/blue.png"));
+                p->setIcon(QIcon("D:/060819/0611/0611/img/blue_striped.png"));
                 break;
             case 6:
-                //p->setIcon(QIcon("D:/060819/0611/0611/img/purple.png"));
+                p->setIcon(QIcon("D:/060819/0611/0611/img/purple_striped.png"));
                 break;
         }
     }
     else if(ty==5)
     {
-
+        p->setIcon(QIcon("D:/060819/0611/0611/img/temp.png"));
     }
     else if(ty==6)
     {
         switch (co)
         {
             case 1:
-                //p->setIcon(QIcon("D:/060819/0611/0611/img/red.png"));
+                p->setIcon(QIcon("D:/060819/0611/0611/img/red_wrapped.png"));
                 break;
             case 2:
-                //p->setIcon(QIcon("D:/060819/0611/0611/img/orange.png"));
+                p->setIcon(QIcon("D:/060819/0611/0611/img/orange_wrapped.png"));
                 break;
             case 3:
-                //p->setIcon(QIcon("D:/060819/0611/0611/img/yellow.png"));
+                p->setIcon(QIcon("D:/060819/0611/0611/img/yellow_wrapped.png"));
                 break;
             case 4:
-                //p->setIcon(QIcon("D:/060819/0611/0611/img/green.png"));
+                p->setIcon(QIcon("D:/060819/0611/0611/img/green_wrapped.png"));
                 break;
             case 5:
-                //p->setIcon(QIcon("D:/060819/0611/0611/img/blue.png"));
+                p->setIcon(QIcon("D:/060819/0611/0611/img/blue_wrapped.png"));
                 break;
             case 6:
-                //p->setIcon(QIcon("D:/060819/0611/0611/img/purple.png"));
+                p->setIcon(QIcon("D:/060819/0611/0611/img/purple_wrapped.png"));
                 break;
         }
     }
@@ -97,6 +97,8 @@ Table::Table(QWidget *parent) :
     ui(new Ui::Table)
 {
     ui->setupUi(this);
+
+    setFixedSize(960,600); // 禁止改變窗口大小
 
     length = 0;
     width = 0;
@@ -224,11 +226,26 @@ bool Table::eliminate_candy()  //先不考慮障礙物  //return flag;
             if(candy[le][w].color==candy[le][w+1].color && candy[le][w].color==candy[le][w+2].color && candy[le][w].color==candy[le][w+3].color && candy[le][w].color==candy[le][w+4].color)
             {
                 flag=true;
+
+                eliminate_high(le, w, candy[le][w].candy_type);
+                eliminate_high(le, w+1, candy[le][w+1].candy_type);
+                eliminate_high(le, w+2, candy[le][w+2].candy_type);
+                eliminate_high(le, w+3, candy[le][w+3].candy_type);
+                eliminate_high(le, w+4, candy[le][w+4].candy_type);
+
                 candy[le][w].color=0;
                 candy[le][w+1].color=0;
-                candy[le][w+2].color=0;
+                //candy[le][w+2].color=0;
                 candy[le][w+3].color=0;
                 candy[le][w+4].color=0;
+
+                candy[le][w+2].color=7;
+                candy[le][w+2].candy_type=5;
+
+                candy[le][w].candy_type=1;
+                candy[le][w+1].candy_type=1;
+                candy[le][w+3].candy_type=1;
+                candy[le][w+4].candy_type=1;
             }
         }
     }
@@ -239,11 +256,26 @@ bool Table::eliminate_candy()  //先不考慮障礙物  //return flag;
             if(candy[le][w].color==candy[le+1][w].color && candy[le][w].color==candy[le+2][w].color && candy[le][w].color==candy[le+3][w].color && candy[le][w].color==candy[le+4][w].color)
             {
                 flag=true;
+
+                eliminate_high(le, w, candy[le][w].candy_type);
+                eliminate_high(le+1, w, candy[le+1][w].candy_type);
+                eliminate_high(le+2, w, candy[le+2][w].candy_type);
+                eliminate_high(le+3, w, candy[le+3][w].candy_type);
+                eliminate_high(le+4, w, candy[le+4][w].candy_type);
+
                 candy[le][w].color=0;
                 candy[le+1][w].color=0;
-                candy[le+2][w].color=0;
+                //candy[le+2][w].color=0;
                 candy[le+3][w].color=0;
                 candy[le+4][w].color=0;
+
+                candy[le+2][w].color=7;
+                candy[le+2][w].candy_type=5;
+
+                candy[le][w].candy_type=1;
+                candy[le+1][w].candy_type=1;
+                candy[le+3][w].candy_type=1;
+                candy[le+4][w].candy_type=1;
             }
         }
     }
@@ -256,30 +288,71 @@ bool Table::eliminate_candy()  //先不考慮障礙物  //return flag;
             if(candy[le][w].color==candy[le][w+1].color && candy[le][w].color==candy[le][w+2].color && candy[le][w].color==candy[le+1][w+2].color && candy[le][w].color==candy[le+2][w+2].color)
             {
                 flag=true;
+
+                eliminate_high(le, w, candy[le][w].candy_type);
+                eliminate_high(le, w+1, candy[le][w+1].candy_type);
+                eliminate_high(le, w+2, candy[le][w+2].candy_type);
+                eliminate_high(le+1, w+2, candy[le+1][w+2].candy_type);
+                eliminate_high(le+2, w+2, candy[le+2][w+2].candy_type);
+
                 candy[le][w].color=0;
                 candy[le][w+1].color=0;
-                candy[le][w+2].color=0;
+                //candy[le][w+2].color=0;
                 candy[le+1][w+2].color=0;
                 candy[le+2][w+2].color=0;
 
+                candy[le][w+2].candy_type=6;
+
+                candy[le][w].candy_type=1;
+                candy[le][w+1].candy_type=1;
+                candy[le+1][w+2].candy_type=1;
+                candy[le+2][w+2].candy_type=1;
             }
             if(candy[le][w].color==candy[le][w+1].color && candy[le][w].color==candy[le+1][w+1].color && candy[le][w].color==candy[le+2][w+1].color && candy[le][w].color==candy[le][w+2].color)
             {
                 flag=true;
+
+                eliminate_high(le, w, candy[le][w].candy_type);
+                eliminate_high(le, w+1, candy[le][w+1].candy_type);
+                eliminate_high(le+1, w+1, candy[le+1][w+1].candy_type);
+                eliminate_high(le+2, w+1, candy[le+2][w+1].candy_type);
+                eliminate_high(le, w+2, candy[le][w+2].candy_type);
+
                 candy[le][w].color=0;
-                candy[le][w+1].color=0;
+                //candy[le][w+1].color=0;
                 candy[le+1][w+1].color=0;
                 candy[le+2][w+1].color=0;
                 candy[le][w+2].color=0;
+
+                candy[le][w+1].candy_type=6;
+
+                candy[le][w].candy_type=1;
+                candy[le+1][w+1].candy_type=1;
+                candy[le+2][w+1].candy_type=1;
+                candy[le][w+2].candy_type=1;
             }
             if(candy[le][w].color==candy[le+1][w].color && candy[le][w].color==candy[le+2][w].color && candy[le][w].color==candy[le][w+1].color && candy[le][w].color==candy[le][w+2].color)
             {
                 flag=true;
-                candy[le][w].color=0;
+
+                eliminate_high(le, w, candy[le][w].candy_type);
+                eliminate_high(le+1, w, candy[le+1][w].candy_type);
+                eliminate_high(le+2, w, candy[le+2][w].candy_type);
+                eliminate_high(le, w+1, candy[le][w+1].candy_type);
+                eliminate_high(le, w+2, candy[le][w+2].candy_type);
+
+                //candy[le][w].color=0;
                 candy[le+1][w].color=0;
                 candy[le+2][w].color=0;
                 candy[le][w+1].color=0;
                 candy[le][w+2].color=0;
+
+                candy[le][w].candy_type=6;
+
+                candy[le+1][w].candy_type=1;
+                candy[le+2][w].candy_type=1;
+                candy[le][w+1].candy_type=1;
+                candy[le][w+2].candy_type=1;
             }
         }
     }
@@ -290,29 +363,71 @@ bool Table::eliminate_candy()  //先不考慮障礙物  //return flag;
             if(candy[le][w].color==candy[le][w+1].color && candy[le][w].color==candy[le][w+2].color && candy[le][w].color==candy[le-1][w+2].color && candy[le][w].color==candy[le-2][w+2].color)
             {
                 flag=true;
+
+                eliminate_high(le, w, candy[le][w].candy_type);
+                eliminate_high(le, w+1, candy[le][w+1].candy_type);
+                eliminate_high(le, w+2, candy[le][w+2].candy_type);
+                eliminate_high(le-1, w+2, candy[le-1][w+2].candy_type);
+                eliminate_high(le-2, w+2, candy[le-2][w+2].candy_type);
+
                 candy[le][w].color=0;
                 candy[le][w+1].color=0;
-                candy[le][w+2].color=0;
+                //candy[le][w+2].color=0;
                 candy[le-1][w+2].color=0;
                 candy[le-2][w+2].color=0;
+
+                candy[le][w+2].candy_type=6;
+
+                candy[le][w].candy_type=1;
+                candy[le][w+1].candy_type=1;
+                candy[le-1][w+2].candy_type=1;
+                candy[le-2][w+2].candy_type=1;
             }
             if(candy[le][w].color==candy[le][w+1].color && candy[le][w].color==candy[le-1][w+1].color && candy[le][w].color==candy[le-2][w+1].color && candy[le][w].color==candy[le][w+2].color)
             {
                 flag=true;
+
+                eliminate_high(le, w, candy[le][w].candy_type);
+                eliminate_high(le, w+1, candy[le][w+1].candy_type);
+                eliminate_high(le-1, w+1, candy[le-1][w+1].candy_type);
+                eliminate_high(le-2, w+1, candy[le-2][w+1].candy_type);
+                eliminate_high(le, w+2, candy[le][w+2].candy_type);
+
                 candy[le][w].color=0;
-                candy[le][w+1].color=0;
+                //candy[le][w+1].color=0;
                 candy[le-1][w+1].color=0;
                 candy[le-2][w+1].color=0;
                 candy[le][w+2].color=0;
+
+                candy[le][w+1].candy_type=6;
+
+                candy[le][w].candy_type=1;
+                candy[le-1][w+1].candy_type=1;
+                candy[le-2][w+1].candy_type=1;
+                candy[le][w+2].candy_type=1;
             }
             if(candy[le][w].color==candy[le-1][w].color && candy[le][w].color==candy[le-2][w].color && candy[le][w].color==candy[le][w+1].color && candy[le][w].color==candy[le][w+2].color)
             {
                 flag=true;
-                candy[le][w].color=0;
+
+                eliminate_high(le, w, candy[le][w].candy_type);
+                eliminate_high(le-1, w, candy[le-1][w].candy_type);
+                eliminate_high(le-2, w, candy[le-2][w].candy_type);
+                eliminate_high(le, w+1, candy[le][w+1].candy_type);
+                eliminate_high(le, w+2, candy[le][w+2].candy_type);
+
+                //candy[le][w].color=0;
                 candy[le-1][w].color=0;
                 candy[le-2][w].color=0;
                 candy[le][w+1].color=0;
                 candy[le][w+2].color=0;
+
+                candy[le][w].candy_type=6;
+
+                candy[le-1][w].candy_type=1;
+                candy[le-2][w].candy_type=1;
+                candy[le][w+1].candy_type=1;
+                candy[le][w+2].candy_type=1;
             }
         }
     }
@@ -323,11 +438,25 @@ bool Table::eliminate_candy()  //先不考慮障礙物  //return flag;
             if(candy[le-1][w].color==candy[le][w].color && candy[le-1][w].color==candy[le][w+1].color && candy[le-1][w].color==candy[le][w+2].color && candy[le-1][w].color==candy[le+1][w].color)
             {
                 flag=true;
+
+                eliminate_high(le-1, w, candy[le-1][w].candy_type);
+                eliminate_high(le, w, candy[le][w].candy_type);
+                eliminate_high(le, w+1, candy[le][w+1].candy_type);
+                eliminate_high(le, w+2, candy[le][w+2].candy_type);
+                eliminate_high(le+1, w, candy[le+1][w].candy_type);
+
                 candy[le-1][w].color=0;
-                candy[le][w].color=0;
+                //candy[le][w].color=0;
                 candy[le][w+1].color=0;
                 candy[le][w+2].color=0;
                 candy[le+1][w].color=0;
+
+                candy[le][w].candy_type=6;
+
+                candy[le-1][w].candy_type=1;
+                candy[le][w+1].candy_type=1;
+                candy[le][w+2].candy_type=1;
+                candy[le+1][w].candy_type=1;
             }
         }
     }
@@ -338,11 +467,25 @@ bool Table::eliminate_candy()  //先不考慮障礙物  //return flag;
             if(candy[le-1][w].color==candy[le][w].color && candy[le-1][w].color==candy[le][w-1].color && candy[le-1][w].color==candy[le][w-2].color && candy[le-1][w].color==candy[le+1][w].color)
             {
                 flag=true;
+
+                eliminate_high(le-1, w, candy[le-1][w].candy_type);
+                eliminate_high(le, w, candy[le][w].candy_type);
+                eliminate_high(le, w-1, candy[le][w-1].candy_type);
+                eliminate_high(le, w-2, candy[le][w-2].candy_type);
+                eliminate_high(le+1, w, candy[le+1][w].candy_type);
+
                 candy[le-1][w].color=0;
-                candy[le][w].color=0;
+                //candy[le][w].color=0;
                 candy[le][w-1].color=0;
                 candy[le][w-2].color=0;
                 candy[le+1][w].color=0;
+
+                candy[le][w].candy_type=6;
+
+                candy[le-1][w].candy_type=1;
+                candy[le][w-1].candy_type=1;
+                candy[le][w-2].candy_type=1;
+                candy[le+1][w].candy_type=1;
             }
         }
     }
@@ -355,10 +498,22 @@ bool Table::eliminate_candy()  //先不考慮障礙物  //return flag;
             if(candy[le][w].color==candy[le][w+1].color && candy[le][w].color==candy[le][w+2].color && candy[le][w].color==candy[le][w+3].color)
             {
                 flag=true;
+
+                eliminate_high(le, w, candy[le][w].candy_type);
+                eliminate_high(le, w+1, candy[le][w+1].candy_type);
+                eliminate_high(le, w+2, candy[le][w+2].candy_type);
+                eliminate_high(le, w+3, candy[le][w+3].candy_type);
+
                 candy[le][w].color=0;
-                candy[le][w+1].color=0;
+                //candy[le][w+1].color=0;
                 candy[le][w+2].color=0;
                 candy[le][w+3].color=0;
+
+                candy[le][w+1].candy_type=4;
+
+                candy[le][w].candy_type=1;
+                candy[le][w+2].candy_type=1;
+                candy[le][w+3].candy_type=1;
             }
         }
     }
@@ -369,10 +524,22 @@ bool Table::eliminate_candy()  //先不考慮障礙物  //return flag;
             if(candy[le][w].color==candy[le+1][w].color && candy[le][w].color==candy[le+2][w].color && candy[le][w].color==candy[le+3][w].color)
             {
                 flag=true;
+
+                eliminate_high(le, w, candy[le][w].candy_type);
+                eliminate_high(le+1, w, candy[le+1][w].candy_type);
+                eliminate_high(le+2, w, candy[le+2][w].candy_type);
+                eliminate_high(le+3, w, candy[le+3][w].candy_type);
+
                 candy[le][w].color=0;
-                candy[le+1][w].color=0;
+                //candy[le+1][w].color=0;
                 candy[le+2][w].color=0;
                 candy[le+3][w].color=0;
+
+                candy[le+1][w].candy_type=4;
+
+                candy[le][w].candy_type=1;
+                candy[le+2][w].candy_type=1;
+                candy[le+3][w].candy_type=1;
             }
         }
     }
@@ -384,9 +551,18 @@ bool Table::eliminate_candy()  //先不考慮障礙物  //return flag;
             if(candy[le][w].color==candy[le][w+1].color && candy[le][w].color==candy[le][w+2].color)
             {
                 flag=true;
+
+                eliminate_high(le, w, candy[le][w].candy_type);
+                eliminate_high(le, w+1, candy[le][w+1].candy_type);
+                eliminate_high(le, w+2, candy[le][w+2].candy_type);
+
                 candy[le][w].color=0;
                 candy[le][w+1].color=0;
                 candy[le][w+2].color=0;
+
+                candy[le][w].candy_type=1;
+                candy[le][w+1].candy_type=1;
+                candy[le][w+2].candy_type=1;
             }
         }
     }
@@ -397,9 +573,18 @@ bool Table::eliminate_candy()  //先不考慮障礙物  //return flag;
             if(candy[le][w].color==candy[le+1][w].color && candy[le][w].color==candy[le+2][w].color)
             {
                 flag=true;
+
+                eliminate_high(le, w, candy[le][w].candy_type);
+                eliminate_high(le+1, w, candy[le+1][w].candy_type);
+                eliminate_high(le+2, w, candy[le+2][w].candy_type);
+
                 candy[le][w].color=0;
                 candy[le+1][w].color=0;
                 candy[le+2][w].color=0;
+
+                candy[le][w].candy_type=1;
+                candy[le+1][w].candy_type=1;
+                candy[le+2][w].candy_type=1;
             }
         }
     }
@@ -415,6 +600,26 @@ bool Table::eliminate_candy()  //先不考慮障礙物  //return flag;
     return flag;
 }
 //eliminate candy; create high_level candy or use high_level candy function; decrease the number of barrier;
+
+void Table::eliminate_high(int le, int w, int type)
+{
+    if(type==4)
+    {
+        for(int i=0; i<width; i++)
+        {
+            candy[le][i].color=0;
+            candy[le][i].candy_type=1;
+        }
+    }
+    if(type==6)
+    {
+        for(int i=0; i<length; i++)
+        {
+            candy[i][w].color=0;
+            candy[i][w].candy_type=1;
+        }
+    }
+}
 
 bool Table::check_candy()  //先不考慮障礙物
 {
@@ -1194,7 +1399,85 @@ void Table::test(){
     if(tx<0)
         tx=-tx;
 
-    if(candy[a][b].color!=candy[c][d].color||candy[a][b].candy_type!=candy[c][d].candy_type)
+    if(candy[a][b].candy_type==5 && candy[c][d].candy_type==5 && tx<2 && ty<2&& tx!=ty)
+    {
+
+    }
+    else if(candy[a][b].candy_type==5 && tx<2 && ty<2&& tx!=ty)
+    {
+        int k=candy[c][d].color;
+        for(int le=0; le<length; le++)
+        {
+            for(int w=0; w<width; w++)
+            {
+                if(candy[le][w].color==k)
+                {
+                    eliminate_high(le, w, candy[le][w].candy_type);
+                    candy[le][w].color=0;
+                    candy[le][w].candy_type=1;
+                }
+            }
+        }
+
+        candy[a][b].color=0;
+        candy[a][b].candy_type=1;
+
+        bool flag=1;
+        do{
+            move_candy();
+            print();
+            if(flag){
+                while(flag){
+                    flag=eliminate_candy();
+                    move_candy();
+                    print();
+                }
+                if(!check_candy()){
+                    print();
+                    recreate_table();
+                }
+            }
+        }
+        while(eliminate_candy());
+    }
+    else if(candy[c][d].candy_type==5 && tx<2 && ty<2&& tx!=ty)
+    {
+        int k=candy[a][b].color;
+        for(int le=0; le<length; le++)
+        {
+            for(int w=0; w<width; w++)
+            {
+                if(candy[le][w].color==k)
+                {
+                    eliminate_high(le, w, candy[le][w].candy_type);
+                    candy[le][w].color=0;
+                    candy[le][w].candy_type=1;
+                }
+            }
+        }
+
+        candy[c][d].color=0;
+        candy[c][d].candy_type=1;
+
+        bool flag=1;
+        do{
+            move_candy();
+            print();
+            if(flag){
+                while(flag){
+                    flag=eliminate_candy();
+                    move_candy();
+                    print();
+                }
+                if(!check_candy()){
+                    print();
+                    recreate_table();
+                }
+            }
+        }
+        while(eliminate_candy());
+    }
+    else if(candy[a][b].color!=candy[c][d].color||candy[a][b].candy_type!=candy[c][d].candy_type)
     {
         if(tx<2 && ty<2&& tx!=ty)
         {
@@ -1213,12 +1496,15 @@ void Table::test(){
                 bool flag=1;
                 do{
                     move_candy();
+                    print();
                     if(flag){
                         while(flag){
                             flag=eliminate_candy();
                             move_candy();
+                            print();
                         }
                         if(!check_candy()){
+                            print();
                             recreate_table();
                         }
                     }
